@@ -51,11 +51,11 @@ services:
         ipv4_address: 172.25.0.14
 
   keycloak:
-    image: quay.io/keycloak/keycloak:latest  # listens on port 8080
+    image: quay.io/keycloak/keycloak:18.0.0  # latest  # listens on port 8080
+    command: start-dev
     environment:
-      - KEYCLOAK_USER=admin
-      - KEYCLOAK_PASSWORD=admin
-      - DB_VENDOR=h2
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
     networks:
       mynet:
         ipv4_address: 172.25.0.15        

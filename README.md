@@ -14,6 +14,12 @@ HAProxy enforces rate limits:
 Setup
 -----
 
+Add to your `/etc/hosts` :
+
+```
+127.0.0.1 keycloak
+```
+
 To set up the demo project, initialize it with Docker Compose:
 
 ```
@@ -21,4 +27,4 @@ sudo docker-compose build
 sudo docker-compose up -d
 ```
 
-The application listens on *localhost*. Go to http://localhost/auth/ to set up clients in Keycloak. Keycloak issues access tokens, which HAProxy validates.
+The application listens on *localhost* and *keycloak*. Go to http://keycloak/ to set up clients in Keycloak. Keycloak issues access tokens, which HAProxy validates.
